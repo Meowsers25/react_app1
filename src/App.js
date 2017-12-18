@@ -29,11 +29,13 @@ class App extends Component {
   render() {
     return (
       //must use className in jsx
+      //line 37 is considered inefficient
+      //use the bind method line 43
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
 
-        <button onClick={this.switchNameHandler.bind(this, 'Christian')}>Switch Name</button>
+        <button onClick={() => this.switchNameHandler('Christian@#$%')}>Switch Name</button>
 
         <Person
            name={this.state.persons[0].name}
