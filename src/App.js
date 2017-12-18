@@ -13,7 +13,7 @@ class App extends Component {
     otherState: 'some other value'
   }
 
-  switchNameHandler = (newName) => {
+  switchNameHandler = ( newName ) => {
     //console.log('Was clicked');
     //DON'T DO THIS! this.state.persons[0].name = 'Katie really loves Chris';
     this.setState({
