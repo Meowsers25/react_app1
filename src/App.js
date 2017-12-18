@@ -34,10 +34,20 @@ class App extends Component {
         <p>This is really working!</p>
 
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}>My hobbies: working out</Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
-        <Person name={this.state.persons[3].name} age={this.state.persons[3].age}/>
+
+        <Person
+           name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+            click={this.switchNameHandler} >My hobbies: working out</Person>
+        <Person
+           name={this.state.persons[1].name}
+            age={this.state.persons[1].age}/>
+        <Person
+           name={this.state.persons[2].name}
+            age={this.state.persons[2].age}/>
+        <Person
+           name={this.state.persons[3].name}
+            age={this.state.persons[3].age}/>
       </div>
     );
 
