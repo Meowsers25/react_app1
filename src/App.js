@@ -38,6 +38,14 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
     return (
       //must use className in jsx
       //line 37 is considered inefficient
@@ -46,7 +54,9 @@ class App extends Component {
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
 
-        <button onClick={() => this.switchNameHandler('Christian@#$%')}>Switch Name</button>
+        <button
+           style={style}
+           onClick={() => this.switchNameHandler('Christian@#$%')}>Switch Name</button>
 
         <Person
            name={this.state.persons[0].name}
