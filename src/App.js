@@ -52,6 +52,29 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let persons = null;
+
+    if ( this.state.showPersons ) {
+      persons = (
+        <div >
+          <Person
+             name={this.state.persons[0].name}
+              age={this.state.persons[0].age}
+              click={this.switchNameHandler.bind(this, 'Chris!!!!!!!!!')} >My hobbies: working out</Person>
+          <Person
+             name={this.state.persons[1].name}
+              age={this.state.persons[1].age}/>
+          <Person
+             name={this.state.persons[2].name}
+              age={this.state.persons[2].age}
+              changed={this.nameChangedHandler} />
+          <Person
+             name={this.state.persons[3].name}
+              age={this.state.persons[3].age}/>
+        </div>
+      );
+    }
+
     return (
       //must use className in jsx
       //line 37 is considered inefficient
@@ -63,27 +86,7 @@ class App extends Component {
         <button
            style={style}
            onClick={this.togglePersonsHandler}>Toggle Persons</button>
-
-           {
-             this.state.showPersons ?
-           <div >
-             <Person
-                name={this.state.persons[0].name}
-                 age={this.state.persons[0].age}
-                 click={this.switchNameHandler.bind(this, 'Chris!!!!!!!!!')} >My hobbies: working out</Person>
-             <Person
-                name={this.state.persons[1].name}
-                 age={this.state.persons[1].age}/>
-             <Person
-                name={this.state.persons[2].name}
-                 age={this.state.persons[2].age}
-                 changed={this.nameChangedHandler} />
-             <Person
-                name={this.state.persons[3].name}
-                 age={this.state.persons[3].age}/>
-           </div> : null
-         }
-
+           {persons}
       </div>
     );
 
