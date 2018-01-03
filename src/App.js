@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -53,11 +52,7 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
 
     let persons = null;
@@ -77,10 +72,6 @@ class App extends Component {
         </div>
       );
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
     }
 
     const classes = [];
@@ -97,7 +88,7 @@ class App extends Component {
       //must use className in jsx
       //line 37 is considered inefficient
       //use the bind method line 43
-      <StyleRoot>
+
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
@@ -107,7 +98,7 @@ class App extends Component {
            onClick={this.togglePersonsHandler}>Toggle Persons</button>
            {persons}
       </div>
-    </StyleRoot>
+
     );
 
     //This is the same as the abve code.
@@ -117,4 +108,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+export default App;
